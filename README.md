@@ -4,6 +4,7 @@ For Java Security
 
 * [Custom Error Page](#Custom-Error)
 * [Restrict File to Access](#forbidden)
+* [Broken Session Managment](#Session-fix)
 
 
 
@@ -30,4 +31,25 @@ Create web.xml and insert below code
   </error-page> 
   ## forbid.jsp is location of custom error page
 
+```
+ ## Session-fix
+
+using session
+
+```
+request.getSession(false).invalidate();
+					HttpSession session = request.getSession(true);
+					
+					session.setAttribute("uname", uname);
+					session.setAttribute("pass", pass);
+					
+					response.sendRedirect("welcome.jsp");
+```
+
+on logout 
+```
+HttpSession session = request.getSession();
+		 session.removeAttribute("uname");
+		 session.invalidate();
+		 response.sendRedirect("login.jsp");
 ```
