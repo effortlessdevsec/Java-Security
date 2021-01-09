@@ -53,3 +53,39 @@ HttpSession session = request.getSession();
 		 session.invalidate();
 		 response.sendRedirect("login.jsp");
 ```
+
+
+# Spring Boot 
+
+* [Adding security headers](#Secure-headers)
+
+
+## Secure-headers
+
+ To implement security headers in application created in spring boot framework we have to add spring security dependencies  in pom.xml
+ 
+ ```
+ <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency> 
+ ``
+ 
+ ```
+Next, create a class that extends the WebSecurityConfigureAdapter. Add the annotation @EnableWebSecurity to the class to tell spring that this class is a spring security configuration.
+
+Override the two overloaded methods configure(HttpSecurity) and configure(AuthenticationManagerBuilder).
+
+The configure(HttpSecurity) defines the mapping of secured URLs or paths that will determine if the user can access specific pages.
+ 
+ 
+ @EnableWebSecurity
+public class Security  extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+    	
+    }
+}
+
+ ```
