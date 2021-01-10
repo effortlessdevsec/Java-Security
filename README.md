@@ -91,5 +91,9 @@ public class Security  extends WebSecurityConfigurerAdapter {
 
  ```
 
+## error-page
+
+
+![alt text](https://github.com/effortlessdevsec/Java-Security/blob/main/error.png)
 
 
