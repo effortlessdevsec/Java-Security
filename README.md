@@ -94,6 +94,12 @@ public class Security  extends WebSecurityConfigurerAdapter {
 
 ## error-page
 
+```
+go to application.properties and set 
+server.error.whitelabel.enabled=false  and create a custom error page 
+
+
+```
 
 ![alt text](https://github.com/effortlessdevsec/Java-Security/blob/main/error.png)
 
