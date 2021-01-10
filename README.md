@@ -70,7 +70,8 @@ HttpSession session = request.getSession();
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency> 
- ``
+
+```
  
  ```
 Next, create a class that extends the WebSecurityConfigureAdapter. Add the annotation @EnableWebSecurity to the class to tell spring that this class is a spring security configuration.
