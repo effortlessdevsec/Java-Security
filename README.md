@@ -58,6 +58,7 @@ HttpSession session = request.getSession();
 # Spring Boot 
 
 * [Adding security headers](#Secure-headers)
+* [Custom error page](#error-page)
 
 
 ## Secure-headers
@@ -89,3 +90,6 @@ public class Security  extends WebSecurityConfigurerAdapter {
 }
 
  ```
+
+
+
