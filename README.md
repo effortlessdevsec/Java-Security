@@ -5,6 +5,7 @@ For Java Security
 * [Custom Error Page](#Custom-Error)
 * [Restrict File to Access](#forbidden)
 * [Broken Session Managment](#Session-fix)
+* [Cross site Scripting](#Xss-Fix)
 
 
 
@@ -55,6 +56,10 @@ HttpSession session = request.getSession();
 ```
 
 
+
+
+
+
 # Spring Boot 
 
 * [Adding security headers](#Secure-headers)
@@ -102,5 +107,27 @@ server.error.whitelabel.enabled=false  and create a custom error page
 ```
 
 ![alt text](https://github.com/effortlessdevsec/Java-Security/blob/main/error.png)
+
+
+
+## Xss-Fix
+
+
+add   org.owasp.esapi dependeny in pom.xml file 
+```
+<dependency>
+    <groupId>org.owasp.esapi</groupId>
+    <artifactId>esapi</artifactId>
+    <version>2.2.2.0</version>
+</dependency>
+
+```
+
+```
+use the StringEscapeUtils 
+${StringEscapeUtils.escapeHtml(obj.name)}
+
+```
+
 
 
