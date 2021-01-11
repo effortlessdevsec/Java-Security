@@ -128,6 +128,7 @@ add   org.owasp.esapi dependeny in pom.xml file
 use the StringEscapeUtils 
 ${StringEscapeUtils.escapeHtml(obj.name)}
 
+#### Refernce : https://www.java67.com/2012/10/how-to-escape-html-special-characters-JSP-Java-Example.html
 ```
 
 
