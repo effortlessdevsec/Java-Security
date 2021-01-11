@@ -5,7 +5,7 @@ For Java Security
 * [Custom Error Page](#Custom-Error)
 * [Restrict File to Access](#forbidden)
 * [Broken Session Managment](#Session-fix)
-* [Cross site Scripting](#Xss-Fix)
+
 
 
 
@@ -64,6 +64,7 @@ HttpSession session = request.getSession();
 
 * [Adding security headers](#Secure-headers)
 * [Custom error page](#error-page)
+* [Cross site Scripting](#Xss-Fix)
 
 
 ## Secure-headers
