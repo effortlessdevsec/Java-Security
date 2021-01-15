@@ -60,10 +60,11 @@ HttpSession session = request.getSession();
 
 
 
-# Spring Boot 
+# Spring Boot  + Spring security
 
 * [Adding security headers](#Secure-headers)
 * [Custom error page](#error-page)
+* [Broken session Managment](#Session)
 * [Cross site Scripting](#Xss-Fix)
 
 
@@ -131,5 +132,27 @@ ${StringEscapeUtils.escapeHtml(obj.name)}
 #### Refernce : https://www.java67.com/2012/10/how-to-escape-html-special-characters-JSP-Java-Example.html
 ```
 
+
+## Session
+
+```
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		
+		http
+			
+			.authorizeRequests().antMatchers("/login").permitAll()
+			.anyRequest().authenticated()
+			.and()
+			.formLogin()
+			.loginPage("/login").permitAll()
+			.and()
+			.logout().invalidateHttpSession(true)
+			.clearAuthentication(true)
+			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			.logoutSuccessUrl("/logout-success").permitAll();
+		
+	}
+```
 
 
