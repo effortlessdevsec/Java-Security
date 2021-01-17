@@ -66,6 +66,7 @@ HttpSession session = request.getSession();
 * [Custom error page](#error-page)
 * [Broken session Managment](#Session)
 * [Cross site Scripting](#Xss-Fix)
+* [Unrestricted file upload](#file-upload-secure)
 
 
 ## Secure-headers
@@ -155,4 +156,42 @@ ${StringEscapeUtils.escapeHtml(obj.name)}
 	}
 ```
 
+## file-upload-secure
+
+```
+
+public ModelAndView upload(String file) {
+	String UPLOAD_FOLDER = "C://test//";
+
+String fileExtentions = "jpg,jpeg,png";
+
+	 String substring = FilenameUtils.getExtension(file);
+	
+	 System.out.println(substring);
+	 if (!fileExtentions.contains(substring) || substring.isEmpty())
+	 {
+			System.out.println("sorry");
+			return new ModelAndView("status", "message", " file type not supported");
+
+	 }
+
+		else {
+			int abcd=file.hashCode();
+			System.out.println("good");
+			String filter= String.valueOf(abcd).concat(".png");
+			System.out.println(filter);
+			byte[] bytes = file.getBytes();
+			Path path = Paths.get(UPLOAD_FOLDER + filter);
+			try {
+				Files.write(path, bytes);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		    //log
+		return new ModelAndView("status", "message", "succes");
+	
+}
+```
 
