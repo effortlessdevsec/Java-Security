@@ -131,6 +131,7 @@ use the StringEscapeUtils
 ${StringEscapeUtils.escapeHtml(obj.name)}
 
 #### Refernce : https://www.java67.com/2012/10/how-to-escape-html-special-characters-JSP-Java-Example.html
+         https://owasp.org/owasp-java-encoder/
 ```
 
 
